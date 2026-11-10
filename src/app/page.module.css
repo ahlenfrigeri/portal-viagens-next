@@ -1,0 +1,98 @@
+.hero {
+  position: relative;
+  min-height: min(80vh, 40rem);
+  display: grid;
+  place-items: center;
+  color: var(--cor-branco);
+  text-align: center;
+  overflow: hidden;
+}
+
+.heroImagem {
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Película escura por cima da foto para o texto ficar legível */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(15, 23, 42, 0.35), rgba(15, 23, 42, 0.7));
+  z-index: -1;
+}
+
+.heroConteudo {
+  width: var(--largura);
+  max-width: 44rem;
+  padding: 4rem 0;
+}
+
+.etiqueta {
+  display: inline-block;
+  background: var(--cor-destaque);
+  padding: 0.25rem 0.875rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.titulo {
+  font-size: clamp(2.25rem, 6vw, 3.75rem);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.texto {
+  font-size: 1.125rem;
+  opacity: 0.92;
+  margin-bottom: 2rem;
+}
+
+.botao {
+  display: inline-block;
+  background: var(--cor-branco);
+  color: var(--cor-primaria);
+  font-weight: 700;
+  padding: 0.875rem 1.75rem;
+  border-radius: 999px;
+  transition: transform 0.2s;
+}
+
+.botao:hover {
+  transform: scale(1.05);
+}
+
+.vantagens {
+  width: var(--largura);
+  margin: 3rem auto 0;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.vantagem {
+  background: var(--cor-branco);
+  border-radius: var(--raio);
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+}
+
+.vantagem span {
+  font-size: 2rem;
+}
+
+.vantagem h2 {
+  font-size: 1.25rem;
+  color: var(--cor-primaria);
+}
+
+.vantagem p {
+  color: var(--cor-suave);
+}
+
+@media (min-width: 48em) {
+  .vantagens {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

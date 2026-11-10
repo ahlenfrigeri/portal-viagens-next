@@ -1,0 +1,36 @@
+.secao {
+  width: var(--largura);
+  margin: 2.5rem auto 0;
+}
+
+.topo {
+  margin-bottom: 2rem;
+}
+
+.titulo {
+  font-size: 2.25rem;
+  color: var(--cor-primaria);
+}
+
+.subtitulo {
+  color: var(--cor-suave);
+}
+
+/* Mobile first: 1 coluna, depois 2 e 3 */
+.grade {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 40em) {
+  .grade {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64em) {
+  .grade {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
